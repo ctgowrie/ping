@@ -4,7 +4,7 @@ export default function handler(req, res) {
         return;
     }
 
-    const body = JSON.parse(req.body);
+    const body = req.body;
     if (body.value === 'ping') {
         console.log(req);
         res.status(200).send('pong');
