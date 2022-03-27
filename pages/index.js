@@ -32,7 +32,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Click 'ping' to trigger api call.
+          {"Click 'ping' to trigger api call."}
           {value}
         </p>
       </main>
