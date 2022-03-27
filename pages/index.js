@@ -38,7 +38,7 @@ export default function Home() {
         <p className={styles.description}>
           {"Click 'ping' to trigger api call."}
         </p>
-        <p className={styles.description} styles={{color: hidden ? 'white' : 'black'}}>
+        <p className={styles.description} style={{color: hidden ? 'white' : 'black'}}>
           pong
         </p>
       </main>
