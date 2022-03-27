@@ -12,7 +12,7 @@ export default function Home() {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: 'ping',
+      body: JSON.stringify({value: 'ping'}),
     })
       .then((res) => res.json())
       .then((data) => setValue(data.value));
