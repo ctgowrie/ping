@@ -15,7 +15,7 @@ export default function Home() {
       body: JSON.stringify({value: 'ping'}),
     })
       .then((res) => res.json())
-      .then((data) => setValue(data.value));
+      .then((data) => setValue(data));
   };
 
   return (
