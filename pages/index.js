@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css'
 import { useState } from 'react';
 
 export default function Home() {
-  const [ value, setValue ] = useState('');
+  const [ hidden, setHidden ] = useState(true);
 
   const handlePing = () => {
     fetch('/api/ping', {
@@ -15,7 +15,11 @@ export default function Home() {
       body: JSON.stringify({value: 'ping'}),
     })
       .then((res) => res.json())
-      .then((data) => setValue(data.value));
+      .then((data) => {
+        if (data.value === 'pong') {
+          setHidden(false);
+        }
+      });
   };
 
   return (
@@ -34,8 +38,8 @@ export default function Home() {
         <p className={styles.description}>
           {"Click 'ping' to trigger api call."}
         </p>
-        <p className={styles.description}>
-          {value}
+        <p className={styles.description} styles={{color: hidden ? 'white' : 'black'}}>
+          pong
         </p>
       </main>
 
