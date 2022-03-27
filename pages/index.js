@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css'
 import { useState } from 'react';
 
 export default function Home() {
-  const { value, setValue } = useState('');
+  const [ value, setValue ] = useState('');
 
   const handlePing = () => {
     fetch('/api/ping', {
@@ -33,6 +33,8 @@ export default function Home() {
 
         <p className={styles.description}>
           {"Click 'ping' to trigger api call."}
+        </p>
+        <p className={styles.description}>
           {value}
         </p>
       </main>
