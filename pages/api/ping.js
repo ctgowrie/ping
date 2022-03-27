@@ -7,10 +7,10 @@ export default function handler(req, res) {
     const body = req.body;
     if (body.value === 'ping') {
         console.log(body);
-        res.status(200).send('pong');
+        res.status(200).send({value: 'pong'});
         return;
     }
     
-    res.status(200).send('')
+    res.status(200).send({value: ''})
     return;
 }
