@@ -10,6 +10,11 @@ export default function handler(req, res) {
         res.status(200).send({value: 'pong'});
         return;
     }
+    if (body.value === 'pong') {
+        console.log(body);
+        res.status(200).send({value: 'ping'});
+        return;
+    }
     
     res.status(200).send({value: ''})
     return;
