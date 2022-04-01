@@ -1,0 +1,18 @@
+[
+    {
+      "name": "ping_color",
+      "id": "47e61c9305814b48f9aa3de6c9bced6b",
+      "variants": [
+        {
+          "name": "original",
+          "id": 0,
+          "weight": 50
+        },
+        {
+          "name": "variant_1",
+          "id": 1,
+          "weight": 50
+        }
+      ]
+    }
+  ]

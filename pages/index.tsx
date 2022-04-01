@@ -1,4 +1,4 @@
-import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next';
+import type { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -12,6 +12,7 @@ const Home = ({
   city,
   region,
   country,
+  ping_color,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const [ value, setValue ] = useState('ping');
 
@@ -30,6 +31,8 @@ const Home = ({
   };
 
   const nameCase = value[0].toUpperCase() + value.slice(1);
+  // TODO casey.gowrie add impression handling here
+  const pingColorVariant = `variant${ping_color}`;
   return (
     <div className={styles.container}>
       <Head>
@@ -39,7 +42,7 @@ const Home = ({
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title} onClick={handlePing}>
+        <h1 className={`${styles.title} ${styles[pingColorVariant]}`} onClick={handlePing}>
           {nameCase}
         </h1>
 
