@@ -1,10 +1,18 @@
-import type { NextPage } from 'next';
+import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useState } from 'react';
 import styles from '../styles/Home.module.css';
 
-const Home: NextPage = () => {
+export const getServerSideProps: GetServerSideProps = async ({ query }) => ({
+  props: query,
+})
+
+const Home = ({
+  city,
+  region,
+  country,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const [ value, setValue ] = useState('ping');
 
   const handlePing = () => {
@@ -36,7 +44,7 @@ const Home: NextPage = () => {
         </h1>
 
         <p className={styles.description}>
-          {`Click '${nameCase}' to trigger api call.`}
+          {`Click '${nameCase}' to trigger api call from ${city}, ${region}, ${country}`}
         </p>
       </main>
 
