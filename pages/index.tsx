@@ -1,9 +1,10 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
 import { useState } from 'react';
+import styles from '../styles/Home.module.css';
 
-export default function Home() {
+const Home: NextPage = () => {
   const [ value, setValue ] = useState('ping');
 
   const handlePing = () => {
@@ -52,5 +53,7 @@ export default function Home() {
         </a>
       </footer>
     </div>
-  )
+  );
 }
+
+export default Home;
